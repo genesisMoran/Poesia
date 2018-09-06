@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Poem.delete_all
+User.delete_all
 
 Poem.create!([
     {title: "3/21/18", 
@@ -26,4 +27,12 @@ Poem.create!([
     {title: "Azul", 
     content: 
     "Estoy azul y no se porque"}
+])
+
+User.create!([
+    {name: "Genesis Moran",
+    poem_id: 1},
+
+    {name: "Genesi Mora",
+    poem_id: 2}
 ])
