@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Poem.delete_all
 User.delete_all
+Poem.delete_all
+
+User.create!([
+    {name: "Genesis Moran"},
+
+    {name: "Genesi Mora"}
+])
 
 Poem.create!([
     {title: "3/21/18", 
@@ -22,17 +28,11 @@ Poem.create!([
     Every wave I taste/
     I savor it/
     There's nothing that can kill me, because I did that before/
-    There's no destroying what came back for her soul"},
+    There's no destroying what came back for her soul",
+    user_id: 1},
 
     {title: "Azul", 
     content: 
-    "Estoy azul y no se porque"}
-])
-
-User.create!([
-    {name: "Genesis Moran",
-    poem_id: 1},
-
-    {name: "Genesi Mora",
-    poem_id: 2}
+    "Estoy azul y no se porque",
+    user_id: 2}
 ])
