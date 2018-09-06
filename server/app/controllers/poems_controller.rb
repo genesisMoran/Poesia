@@ -8,10 +8,10 @@ class PoemsController < ApplicationController
         render json: { poems: Poem.all }
     end
 
-    # def show        #R  
-    #     @poem = Poem.find(params[:id])
-    #     render json: { poem: @poem }
-    # end
+    def show        #R  
+        @poem = Poem.find(params[:id])
+        render json: { poem: @poem }
+    end
 
     # def create      #C
     #     @poem = Poem.new(poem_params)
