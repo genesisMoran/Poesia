@@ -1658,3 +1658,58 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4709995827031202925)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemovePoemId (20180906181405)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.0ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "poem_id"[0m
+  ↳ db/migrate/20180906181405_remove_poem_id.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906181405"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4709995827031202925)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-09-06 14:15:25 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.9ms)
+Completed 200 OK in 39ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-06 14:15:30 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mPoem Load (0.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/poems/1" for 127.0.0.1 at 2018-09-06 14:15:35 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems/2" for 127.0.0.1 at 2018-09-06 14:15:39 -0400
+Processing by PoemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
