@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Poem.delete_all
+
 Poem.create!([
     {title: "3/21/18", 
     content: 
@@ -20,7 +22,7 @@ Poem.create!([
     I savor it/
     There's nothing that can kill me, because I did that before/
     There's no destroying what came back for her soul"},
-    
+
     {title: "Azul", 
     content: 
     "Estoy azul y no se porque"}
