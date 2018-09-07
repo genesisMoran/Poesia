@@ -58,6 +58,7 @@ determineWhichToRender() {
           onClick={this.handleLinkClick.bind(this)}
           links={links} />
           {this.determineWhichToRender()}
+        <ListPoems poems={this.state.poems} />
       </div>
     )
   }

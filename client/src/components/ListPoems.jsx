@@ -4,9 +4,14 @@ import React from 'react';
 function ListPoems(props) {
     return(
         <main>
-            {props.poems.map(poem => (
-                <div key={poem.poem_id}></div>
-            ))}
+            {props.poems.map(poem => {
+                return (
+                    <div key={poem.id}>
+                        <p>{poem.title}</p>
+                        <p>{poem.content}</p>
+                    </div>
+                )
+            })}
         </main>
     )
 }

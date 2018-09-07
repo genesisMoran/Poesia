@@ -3133,3 +3133,52 @@ Processing by PoemsController#index as */*
 Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:14:42 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:21:32 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:22:21 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.6ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:24:58 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:26:59 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:27:49 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-07 16:30:27 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mPoem Load (0.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
