@@ -5,13 +5,13 @@ https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api
 
 class UsersController < ApplicationController
   def index         #R
-    render json: { users: User.all }, include: :poems   # Not sure if I need the `include` here
+    render json: { users: User.all }
   end
 
-#   def show          #R
-#     @user = User.find(params[:id])
-#     render json: { user: @user }, include: :poems   # Not sure if I need the `include` here
-#   end
+  def show          #R
+    @user = User.find(params[:id])
+    render json: { user: @user }, include: :poems  
+  end
 
 #   def create        #C
 #     @new_user = User.new(user_params)

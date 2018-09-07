@@ -4,7 +4,9 @@ import React from 'react';
 function ListPoems(props) {
     return(
         <main>
-        {/* map here */}
+            {props.poems.map(poem => (
+                <div key={poem.poem_id}></div>
+            ))}
         </main>
     )
 }

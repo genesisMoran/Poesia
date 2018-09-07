@@ -1,4 +1,5 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
+// The data is coming from `:3000`
+const BASE_URL = 'http://localhost:3000';
 
 export function fetchPoems() {
   return fetch(`${BASE_URL}/poems`)

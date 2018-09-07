@@ -24,22 +24,29 @@ class App extends Component {
       title: '',
       content: ''
     }
-    // this.
+
+    // this.selectedPoem = this.selectedPoem.bind(this);
   }
 
-componentDidMount(){
+componentDidMount() {
   fetchPoems()
   .then(data => this.setState({ poems: data.poems }));
 }
 
-determineWhichToRender(){
+determineWhichToRender() {
   const { currentView } = this.state;
+  const { poems } = this.state;
+
   switch (currentView) {
     case 'Poesías':
       return <ListPoems
-      selectedPoem={this.selectPoem}/>
+        poems={poems}/>
   }
 }
+
+  handleLinkClick(link) {
+    this.setState({ currentView: link });
+  }
 
   render() {
     const links = [
@@ -47,7 +54,10 @@ determineWhichToRender(){
     ];
     return(
       <div className="App">
-      
+        <Header
+          onClick={this.handleLinkClick.bind(this)}
+          links={links} />
+          {this.determineWhichToRender()}
       </div>
     )
   }
