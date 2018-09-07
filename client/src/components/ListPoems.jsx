@@ -1,9 +1,10 @@
+// cRud     Read
 import React from 'react';
 
-function ListPoems(props){
+function ListPoems(props) {
     return(
         <main>
-            Test
+        {/* map here */}
         </main>
     )
 }

@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users
 end
 
-#   resources :poems do
-#     resources :users, only: [:create, :index]
+#   resources :users do
+#     resources :poems
 #   end
 #   resources :users
 # end
