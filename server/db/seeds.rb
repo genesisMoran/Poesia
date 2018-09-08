@@ -18,21 +18,21 @@ User.create!([
 Poem.create!([
     {title: "3/21/18", 
     content: 
-    "There's always a song playing in my head/ 
-    Either one I heard, or one I made up/
-    The wind talks to me/
-    I fill, feel, write down/
-    I fill, feel, write down/
-    Every wave I read/
-    I eye 'em well/
-    Every wave I taste/
-    I savor it/
-    There's nothing that can kill me, because I did that before/
-    There's no destroying what came back for her soul",
-    user_id: 1},
+    "There's always a song playing in my head
+    \nEither one I heard, or one I made up
+    \nThe wind talks to me
+    \nI fill, feel, write down
+    \nI fill, feel, write down
+    \nEvery wave I read
+    \nI eye 'em well
+    \nEvery wave I taste
+    \nI savor it
+    \nThere's nothing that can kill me, because I did that before
+    \nThere's no destroying what came back for her soul",
+    user_id: 3},
 
     {title: "Azul", 
     content: 
     "Estoy azul y no se porque",
-    user_id: 2}
+    user_id: 4}
 ])
