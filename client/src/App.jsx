@@ -33,16 +33,16 @@ componentDidMount() {
   .then(data => this.setState({ poems: data.poems }));
 }
 
-determineWhichToRender() {
-  const { currentView } = this.state;
-  const { poems } = this.state;
+// determineWhichToRender() {
+//   const { currentView } = this.state;
+//   const { poems } = this.state;
 
-  switch (currentView) {
-    case 'Poesías':
-      return <ListPoems
-        poems={poems}/>
-  }
-}
+//   switch (currentView) {
+//     case 'Poesías':
+//       return <ListPoems
+//         poems={poems}/>
+//   }
+// }
 
   handleLinkClick(link) {
     this.setState({ currentView: link });
@@ -57,7 +57,7 @@ determineWhichToRender() {
         <Header
           onClick={this.handleLinkClick.bind(this)}
           links={links} />
-          {this.determineWhichToRender()}
+          {/* {this.determineWhichToRender()} */}
         <ListPoems poems={this.state.poems} />
       </div>
     )

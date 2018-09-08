@@ -13,6 +13,12 @@ class PoemsController < ApplicationController
         render json: { poem: @poem }
     end
 
+    def destroy     #D
+        @poem = Poem.find(params[:id])
+        @poem.destroy
+        render json: { message: 'Poem #{params[:id]} deleted' }
+    end
+    
     # def create      #C
     #     @poem = Poem.new(poem_params)
     #     if @new_poem.save
@@ -31,9 +37,15 @@ class PoemsController < ApplicationController
     #     end
     # end
 
-    # def destroy     #D
-    #     @poem = Poem.find(params[:id])
-    #     @poem.destroy
-    #     render json: { message : "Poem #{params[:id]} deleted" }
+    # private
+    # def poem_params
+    #   params
+    #     .require(:data)
+    #     .require(:attributes)
+    #     .permit(
+    #       :title,
+    #       :content,
+    #       :user_id
+    #     )
     # end
 end

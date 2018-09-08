@@ -1,11 +1,11 @@
 // Crud     Create
-// import React from 'react';
+import React from 'react';
 
-// function AddPoem(props) {
-//     return(
-//         <main>
-//         </main>
-//     )
-// }
+function AddPoem(props) {
+    return(
+        <main>
+        </main>
+    )
+}
 
-// export default AddPoem;
+export default AddPoem;
