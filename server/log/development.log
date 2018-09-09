@@ -6052,3 +6052,26 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/poems" for 127.0.0.1 at 2018-09-09 17:54:50 -0400
+Processing by PoemsController#create as */*
+  Parameters: {"data"=>{"content"=>"boo", "title"=>"you", "user_id"=>1}, "poem"=>{}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:18
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:18
+  [1m[36mPoem Create (31.9ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "you"], ["content", "boo"], ["created_at", "2018-09-09 21:54:50.246475"], ["updated_at", "2018-09-09 21:54:50.246475"], ["user_id", 1]]
+  ↳ app/controllers/poems_controller.rb:18
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:18
+Completed 200 OK in 144ms (Views: 1.1ms | ActiveRecord: 58.3ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-09 17:55:03 -0400
+Processing by PoemsController#index as */*
+  Parameters: {"poem"=>{}}
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
