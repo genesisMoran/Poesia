@@ -3,9 +3,3 @@ Rails.application.routes.draw do
   resources :poems
   resources :users
 end
-
-#   resources :users do
-#     resources :poems
-#   end
-#   resources :users
-# end

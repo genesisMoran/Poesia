@@ -1,11 +1,13 @@
 // Crud     Create
-import React from 'react';
+import React, { Component } from 'react';
 
-function AddPoem(props) {
-    return(
-        <main>
-        </main>
-    )
+class AddPoem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        }
+    }
 }
 
 export default AddPoem;

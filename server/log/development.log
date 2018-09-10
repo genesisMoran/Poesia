@@ -6075,3 +6075,10 @@ Processing by PoemsController#index as */*
 Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/poems" for 127.0.0.1 at 2018-09-09 23:26:54 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (9.9ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:8
+Completed 200 OK in 28ms (Views: 14.9ms | ActiveRecord: 9.9ms)
+
+
