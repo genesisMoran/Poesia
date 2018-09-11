@@ -9,7 +9,8 @@ import AddPoem from './components/AddPoem';
 // import EditPoem from './components/EditPoem';
 import Header from './components/Header';
 import { 
-  fetchPoems
+  fetchPoems,
+  savePoem
 } from './services/api';
 // Styling
 import './App.css';
@@ -19,30 +20,42 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'Poesías',
-      poems: [],
-      title: '',
-      content: ''
+      currentView: '',
+      poems: []
     }
 
-    // this.selectedPoem = this.selectedPoem.bind(this);
+    // this.selectPoem = this.selectPoem.bind(this);
+    this.createPoem = this.createPoem.bind(this);
   }
 
 componentDidMount() {
   fetchPoems()
   .then(data => this.setState({ poems: data.poems }));
 }
+  createPoem(poem) {
+    savePoem (poem)
+    .then(data => fetchPoems())
+    .then(data => {
+      this.setState({
+        poems: data.poems
+      });
+    });
+  }
+  
+determineWhichToRender() {
+  const { currentView } = this.state;
+  const { poems } = this.state;
 
-// determineWhichToRender() {
-//   const { currentView } = this.state;
-//   const { poems } = this.state;
-
-//   switch (currentView) {
-//     case 'Poesías':
-//       return <ListPoems
-//         poems={poems}/>
-//   }
-// }
+  switch (currentView) {
+    case 'Poesías':
+      return <ListPoems
+        poems={poems}/>;
+        break;
+    case 'Add a poem':
+      return <AddPoem
+        onSubmit={this.createPoem} />;
+  }
+}
 
   handleLinkClick(link) {
     this.setState({ currentView: link });
@@ -51,14 +64,15 @@ componentDidMount() {
   render() {
     const links = [
       'Poesías',
+      'Add a poem'
     ];
+
     return(
       <div className="App">
         <Header
           onClick={this.handleLinkClick.bind(this)}
           links={links} />
-          {/* {this.determineWhichToRender()} */}
-        <ListPoems poems={this.state.poems} />
+          {this.determineWhichToRender()}
       </div>
     )
   }
