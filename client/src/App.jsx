@@ -2,7 +2,6 @@
 // https://git.generalassemb.ly/wdi-nyc-lambda/fullstack-crud
 // https://git.generalassemb.ly/wdi-nyc-lambda/morning-exercise-guitar-app
 
-
 import React, { Component } from 'react';
 import ListPoems from './components/ListPoems';
 import AddPoem from './components/AddPoem';
@@ -10,7 +9,8 @@ import EditPoem from './components/EditPoem';
 import Header from './components/Header';
 import { 
   fetchPoems,
-  savePoem
+  savePoem,
+  updatePoem
 } from './services/api';
 // Styling
 import './App.css';
@@ -41,8 +41,19 @@ componentDidMount() {
       });
     });
   }
+
+  updatePoem(poem) {
+    updatePoem(poem)
+      .then(data => fetchPoems())
+      .then(data => {
+        this.setState({
+          currentView: 'Poesías',
+          poems: data.poems
+        });
+      })
+  }
   
-determineWhichToRender() {
+  determineWhichToRender() {
   const { currentView } = this.state;
   const { poems } = this.state;
 
@@ -51,7 +62,7 @@ determineWhichToRender() {
       return <ListPoems
         poems={poems}/>;
         break;
-    case 'Add a poem':
+    case 'Share Gems':
       return <AddPoem
         onSubmit={this.createPoem} />;
   }
@@ -64,7 +75,8 @@ determineWhichToRender() {
   render() {
     const links = [
       'Poesías',
-      'Add a poem'
+      'Share Gems',
+      'Edit Poesía'
     ];
 
     return(
