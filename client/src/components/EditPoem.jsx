@@ -1,11 +1,12 @@
 // crUd     Update
-// import React from 'react';
+import React from 'react';
 
-// function EditPoem(props) {
-//     return(
-//         <main>
-//         </main>
-//     )
-// }
+function EditPoem(props) {
+    return(
+        <main>
+            
+        </main>
+    )
+}
 
-// export default EditPoem;
+export default EditPoem;

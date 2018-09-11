@@ -14,7 +14,7 @@ export function fetchPoems() {
 export function savePoem(poem) {
   const opts = {
     method: 'POST',
-    body: JSON.stringify(poem),
+    body: JSON.stringify({ data: poem }),
     headers: {
       'Content-Type': 'application/json'
     }

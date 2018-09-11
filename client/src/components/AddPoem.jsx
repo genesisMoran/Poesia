@@ -5,10 +5,11 @@ class AddPoem extends Component {
     constructor(props) {
         super(props);
 // NOTE - Not sure if I need all of these in state
+// Had to hard-code `user_id` in order for this to work 
         this.state = {
             title: '',
             content: '',
-            user_id: '',
+            user_id: 1,
             first_name: '',
             last_name: ''
         };

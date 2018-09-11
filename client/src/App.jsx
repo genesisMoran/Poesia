@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import ListPoems from './components/ListPoems';
 import AddPoem from './components/AddPoem';
-// import EditPoem from './components/EditPoem';
+import EditPoem from './components/EditPoem';
 import Header from './components/Header';
 import { 
   fetchPoems,
