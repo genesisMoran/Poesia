@@ -31,7 +31,7 @@ class App extends Component {
     this.createPoem = this.createPoem.bind(this);
     this.updatePoem = this.updatePoem.bind(this);
     this.handleEditPoem = this.handleEditPoem.bind(this);
-    // this.deletePoem = this.deletePoem.bind(this);   
+    this.handleDeletePoem = this.handleDeletePoem.bind(this);   
   }
 
 componentDidMount() {
@@ -69,6 +69,17 @@ componentDidMount() {
       currentView: 'Edit Poesía'
     });
   }
+
+  handleDeletePoem(poem) {
+    deletePoem(poem)
+    .then(data => fetchPoems())
+    .then(data => {
+      this.setState({
+        currentView: 'Poesías',
+        poems: data.poems
+      });
+    });
+  }
   
   determineWhichToRender() {
   const { currentView } = this.state;
@@ -78,7 +89,8 @@ componentDidMount() {
       case 'Poesías':
         return <ListPoems
           poems={poems}
-          handleEditPoem={this.handleEditPoem} />;
+          handleEditPoem={this.handleEditPoem}
+          handleDeletePoem={this.handleDeletePoem} />;
           break;
       case 'Share Gems':
         return <AddPoem

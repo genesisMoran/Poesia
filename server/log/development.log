@@ -10996,3 +10996,98 @@ Processing by PoemsController#index as */*
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2018-09-12 19:24:04 -0400
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:24:04 -0400
+Processing by PoemsController#index as */*
+Processing by UsersController#index as */*
+  [1m[36mPoem Load (70.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  [1m[36mUser Load (80.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 115ms (Views: 33.8ms | ActiveRecord: 80.5ms)
+
+
+  ↳ app/controllers/poems_controller.rb:9
+Completed 200 OK in 157ms (Views: 84.0ms | ActiveRecord: 70.5ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:24:39 -0400
+Started GET "/users" for 127.0.0.1 at 2018-09-12 19:24:39 -0400
+Processing by PoemsController#index as */*
+Processing by UsersController#index as */*
+  [1m[36mPoem Load (1.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/poems_controller.rb:9
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.4ms)
+
+
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-12 19:33:54 -0400
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:33:54 -0400
+Processing by UsersController#index as */*
+Processing by PoemsController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mPoem Load (5.5ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:9
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-12 19:35:16 -0400
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:35:16 -0400
+Processing by UsersController#index as */*
+Processing by PoemsController#index as */*
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mPoem Load (1.2ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 6.8ms)
+
+
+  ↳ app/controllers/poems_controller.rb:9
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/poems/6" for 127.0.0.1 at 2018-09-12 19:35:22 -0400
+Processing by PoemsController#destroy as */*
+  Parameters: {"data"=>{"id"=>6, "title"=>"Azul", "content"=>"Ocean ocean ocean blue", "created_at"=>"2018-09-12T21:10:07.849Z", "updated_at"=>"2018-09-12T23:02:03.151Z", "user_id"=>5}, "id"=>"6", "poem"=>{}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT  "poems".* FROM "poems" WHERE "poems"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/poems_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/poems_controller.rb:34
+  [1m[36mPoem Destroy (3.2ms)[0m  [1m[31mDELETE FROM "poems" WHERE "poems"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/poems_controller.rb:34
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/poems_controller.rb:34
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:35:22 -0400
+Processing by PoemsController#index as */*
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:9
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-12 19:36:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems" WHERE "poems"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:15
+Completed 200 OK in 58ms (Views: 55.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/poems" for 127.0.0.1 at 2018-09-12 19:36:58 -0400
+Processing by PoemsController#index as HTML
+  [1m[36mPoem Load (0.3ms)[0m  [1m[34mSELECT "poems".* FROM "poems"[0m
+  ↳ app/controllers/poems_controller.rb:9
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+

@@ -40,7 +40,7 @@ export function fetchPoems() {
   // Read one poem  *
 
 // EditPoem
-  // Update   *
+  // Update   
   export function updatePoem(poem) {
     const opts = {
       method: 'PUT',
@@ -49,7 +49,7 @@ export function fetchPoems() {
         'Content-Type': 'application/json'
       }
     };
-    return fetch(`${BASE_URL}/poems/${poem.id}`, opts) // HERE *
+    return fetch(`${BASE_URL}/poems/${poem.id}`, opts)
     .then(resp => {
         return resp.json();
     }).catch(error => {
@@ -57,7 +57,7 @@ export function fetchPoems() {
     });
   }
 
-  // Delete   *
+  // Delete   
 export function deletePoem(poem) {
   const opts = {
     method: 'DELETE',
@@ -66,6 +66,6 @@ export function deletePoem(poem) {
       'Content-Type': 'application/json'
     }
   };
-  return fetch(`${BASE_URL}/poems/${poem.id}`, opts)  // HERE *
+  return fetch(`${BASE_URL}/poems/${poem.id}`, opts)
   .then(resp => resp.json());
 }
