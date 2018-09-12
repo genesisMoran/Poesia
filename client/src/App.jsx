@@ -21,17 +21,27 @@ class App extends Component {
     super(props);
     this.state = {
       currentView: '',
+      selectedPoem: '',
       poems: []
     }
-
-    // this.selectPoem = this.selectPoem.bind(this);
+    this.selectPoem = this.selectPoem.bind(this);   // Keep going
     this.createPoem = this.createPoem.bind(this);
+    this.updatePoem = this.updatePoem.bind(this);
+    // this.deletePoem = this.deletePoem.bind(this);   // Need to add
   }
 
 componentDidMount() {
   fetchPoems()
   .then(data => this.setState({ poems: data.poems }));
 }
+
+  selectPoem(poem) {
+    this.setState({
+      selectedPoem: poem,
+      currentView: 'Edit Poesía'
+    });
+  }
+
   createPoem(poem) {
     savePoem (poem)
     .then(data => fetchPoems())
@@ -44,29 +54,37 @@ componentDidMount() {
 
   updatePoem(poem) {
     updatePoem(poem)
-      .then(data => fetchPoems())
-      .then(data => {
-        this.setState({
-          currentView: 'Poesías',
-          poems: data.poems
-        });
-      })
+    .then(data => fetchPoems())
+    .then(data => {
+      this.setState({
+        currentView: 'Poesías',
+        poems: data.poems
+      });
+    });
   }
   
   determineWhichToRender() {
   const { currentView } = this.state;
-  const { poems } = this.state;
+  const { poems, selectedPoem } = this.state;
 
-  switch (currentView) {
-    case 'Poesías':
-      return <ListPoems
-        poems={poems}/>;
+    switch (currentView) {
+      case 'Poesías':
+        return <ListPoems
+          poems={poems}
+          selectedPoem={this.selectPoem}/>;
+          break;
+      case 'Share Gems':
+        return <AddPoem
+          onSubmit={this.createPoem} />;
+          break;
+      case 'Edit Poesía':
+      const poem = poems.find(poem => poem.poem_id === selectedPoem.poem_id);
+        return <EditPoem
+        onSubmit={this.updatePoem}
+        onDelete={this.deletePoem} />;
         break;
-    case 'Share Gems':
-      return <AddPoem
-        onSubmit={this.createPoem} />;
+    }
   }
-}
 
   handleLinkClick(link) {
     this.setState({ currentView: link });

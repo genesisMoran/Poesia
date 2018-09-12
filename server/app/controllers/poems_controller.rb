@@ -25,11 +25,8 @@ class PoemsController < ApplicationController
 
     def update
         @poem = Poem.find(params[:id])
-        if @poem.update(poem_params)
-            render json: @poem.to_json(include: :users) 
-        else
-            render json: { message: "Oops, try again dear.", errors: poem.errors }, status: :bad_request
-        end
+        @poem.update(poem_params)
+        render json: { poem: @poem }
     end
 
     def destroy
@@ -48,7 +45,3 @@ class PoemsController < ApplicationController
         )
     end
 end
-
-# NOTES
-# Line 28: Might not need to `include: :users`
-# Line 31: `@poem.errors` or `poem.errors`

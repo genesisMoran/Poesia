@@ -1,5 +1,3 @@
-// Try getting Update & Delete both here
-// crUD     Update | Delete
 import React from 'react';
 
 function EditPoem(props) {

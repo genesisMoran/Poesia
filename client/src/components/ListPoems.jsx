@@ -1,4 +1,3 @@
-// cRud     Read
 import React from 'react';
 
 function ListPoems(props) {
