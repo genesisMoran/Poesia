@@ -12,7 +12,6 @@
 ### 10.01.2018
 #### Here is what's next for the Poesía app:
 - NYC bookshop information available to the user
-![poesia-wireframe-3](https://user-images.githubusercontent.com/39888042/45043840-5081a480-b03c-11e8-8ffc-f2d7251127dc.png)
 - User will be able to add audio bits of poetry
 - More visuals to inspire our users in their poetry making progress
 - User authentication for content safety
