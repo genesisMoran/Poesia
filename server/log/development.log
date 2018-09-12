@@ -7385,3 +7385,186 @@ Processing by PoemsController#index as */*
 Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (26.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (331.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "server_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (205.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "server_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (686.9ms)[0m  [1m[35mCREATE DATABASE "server_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (943.5ms)[0m  [1m[35mCREATE DATABASE "server_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4709995827031202925)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePoems (20180905021540)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "poems" ("id" bigserial primary key, "poem_id" integer, "title" character varying, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180905021540_create_poems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180905021540"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DropPoemId (20180906135236)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (18.7ms)[0m  [1m[35mALTER TABLE "poems" DROP COLUMN "poem_id"[0m
+  ↳ db/migrate/20180906135236_drop_poem_id.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906135236"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180906142319)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180906142319_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906142319"]]
+  ↳ bin/rails:9
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ReferencePoems (20180906144211)
+  [1m[35m (7.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "users" ADD "poem_id" integer[0m
+  ↳ db/migrate/20180906144211_reference_poems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906144211"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ReferenceUsers (20180906175510)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "poems" ADD "user_id" integer[0m
+  ↳ db/migrate/20180906175510_reference_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906175510"]]
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to RemovePoemId (20180906181405)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "poem_id"[0m
+  ↳ db/migrate/20180906181405_remove_poem_id.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180906181405"]]
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ExpandName (20180908191512)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "name"[0m
+  ↳ db/migrate/20180908191512_expand_name.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  ↳ db/migrate/20180908191512_expand_name.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  ↳ db/migrate/20180908191512_expand_name.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180908191512"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-12 19:23:18.708262"], ["updated_at", "2018-09-12 19:23:18.708262"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4709995827031202925)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPoem Destroy (0.8ms)[0m  [1m[31mDELETE FROM "poems"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-09-12 19:23:31.888175"], ["updated_at", "2018-09-12 19:23:31.888175"], ["first_name", "Genesis"], ["last_name", "Moran"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-09-12 19:23:31.896822"], ["updated_at", "2018-09-12 19:23:31.896822"], ["first_name", "Bo"], ["last_name", "Lee"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-09-12 19:23:31.902390"], ["updated_at", "2018-09-12 19:23:31.902390"], ["first_name", "Ira"], ["last_name", "Babbles"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-09-12 19:23:31.907794"], ["updated_at", "2018-09-12 19:23:31.907794"], ["first_name", "Joseph"], ["last_name", "Lobo"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-09-12 19:23:31.912961"], ["updated_at", "2018-09-12 19:23:31.912961"], ["first_name", "New"], ["last_name", "User"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPoem Create (1.1ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "06/19/17"], ["content", "I think I think too much\n    /I observe myself as I think I think too much\n    /I think I speak too much\n    /I write to myself to translate speech, but still speak too much\n    /I'm an open book, was told to guard myself\n    /I don't worry though, I can read them well\n    /You'll soon realize with time that essence can't be cloned\n    /My pages stay mine\n    /Common sense I hold, they should teach at schools\n    /Noise I hear, cut through it all\n    /Same I see, line through it all\n    /Eyes I read, you can switch your looks\n    /Souls I see, you can try to hide\n    /I can feel it all"], ["created_at", "2018-09-12 19:23:31.955155"], ["updated_at", "2018-09-12 19:23:31.955155"], ["user_id", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPoem Create (0.7ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Eat it up"], ["content", "Stir the spoon, just a dash\n    /Cook that loon in a flash\n    /Spice and salt add the flavor\n    /Take my time just to savor\n    /More and more I can't deny\n    /My appetite to satisfy\n    /Pasta, chicken, shark and boar\n    /Eagle, seals, still want more"], ["created_at", "2018-09-12 19:23:31.964519"], ["updated_at", "2018-09-12 19:23:31.964519"], ["user_id", 2]]
+  ↳ db/seeds.rb:29
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPoem Create (0.6ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Tis da season"], ["content", "Make it shower, make it rain\n    /All this power, keep it slayin\n    /Sparkles on the tree, wreath on the door\n    /Mistletoe in the air make ya jaw hit the floor\n    /Walk out, popcorn chain hangin low\n    /Eggnog bottles let em know\n    /Hundred different boxes under the tree\n    /Santa clause? Nah that ain’t me\n    /Sleigh bells jinglin, hear the call\n    /So dash away, dash away, dash away yall"], ["created_at", "2018-09-12 19:23:31.976334"], ["updated_at", "2018-09-12 19:23:31.976334"], ["user_id", 2]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPoem Create (0.5ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "To Be Loved"], ["content", "Secretive is she about her own name\n    /she knows never to play too close to the flame,\n    /For she has been burned before\n    /by a word of ardor she has grown to abhor,\n    /But no matter what of her she says she will become\n    /I swear to her she will deserve to always be loved\n    \n    /And she is loved, by one at least\n    /whose words are better left written on paper sheets,\n    /And written not with ink, but with his blood and heart\n    /for on his life, he knows she has left her mark,\n    /For her warmth is worth the weight of the Sun\n    /and that is why he knows, to him, she will deserve to always be loved"], ["created_at", "2018-09-12 19:23:31.990734"], ["updated_at", "2018-09-12 19:23:31.990734"], ["user_id", 3]]
+  ↳ db/seeds.rb:29
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPoem Create (0.6ms)[0m  [1m[32mINSERT INTO "poems" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lost"], ["content", "Take me back to that clear blue sea. \n    /That place on the shore where I envisioned you standing next to me. \n    /Your soft whispers caressed my soul like a soft summer breeze... \n    /We have drifted apart pulled away by the ebbing ocean, \n    /your whispers turned to complete silence. \n    /The flow returns me to the shore...alone, standing on that sandy floor. \n    /I have to go back to that clear blue sea, for what lies beyond i cannot see. \n    /All I know is my love for you will always be, as I navigate this unrelenting sea."], ["created_at", "2018-09-12 19:23:32.002984"], ["updated_at", "2018-09-12 19:23:32.002984"], ["user_id", 4]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29

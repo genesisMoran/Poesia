@@ -14,7 +14,16 @@ User.create!([
     last_name: "Moran"},
 
     {first_name: "Bo",
-    last_name: "Lee"}
+    last_name: "Lee"},
+
+    {first_name: "Ira",
+    last_name: "Babbles"},
+
+    {first_name: "Joseph",
+    last_name: "Lobo"},
+
+    {first_name: "New",
+    last_name: "User"}
 ])
 
 Poem.create!([
@@ -60,5 +69,34 @@ Poem.create!([
     /Santa clause? Nah that ain’t me
     /Sleigh bells jinglin, hear the call
     /So dash away, dash away, dash away yall",
-    user_id: 2}
+    user_id: 2},
+
+    {title: "To Be Loved",
+    content: 
+    "Secretive is she about her own name
+    /she knows never to play too close to the flame,
+    /For she has been burned before
+    /by a word of ardor she has grown to abhor,
+    /But no matter what of her she says she will become
+    /I swear to her she will deserve to always be loved
+    
+    /And she is loved, by one at least
+    /whose words are better left written on paper sheets,
+    /And written not with ink, but with his blood and heart
+    /for on his life, he knows she has left her mark,
+    /For her warmth is worth the weight of the Sun
+    /and that is why he knows, to him, she will deserve to always be loved",
+    user_id: 3},
+
+    {title: "Lost",
+    content: 
+    "Take me back to that clear blue sea. 
+    /That place on the shore where I envisioned you standing next to me. 
+    /Your soft whispers caressed my soul like a soft summer breeze... 
+    /We have drifted apart pulled away by the ebbing ocean, 
+    /your whispers turned to complete silence. 
+    /The flow returns me to the shore...alone, standing on that sandy floor. 
+    /I have to go back to that clear blue sea, for what lies beyond i cannot see. 
+    /All I know is my love for you will always be, as I navigate this unrelenting sea.",
+    user_id: 4}
 ])
