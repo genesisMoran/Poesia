@@ -22,7 +22,7 @@ const BASE_URL = 'http://localhost:3000';
   }
 
 // ListPoems
-  // Read
+  // Read all poems
 export function fetchPoems() {
   return fetch(`${BASE_URL}/poems`)
     .then(resp => resp.json())
@@ -30,7 +30,9 @@ export function fetchPoems() {
       throw Error(err);
     });
 }
+  // Read one poem
 
+  
 // EditPoem
   // Update
 export function updatePoem(poem) {

@@ -4,10 +4,11 @@ class AddPoem extends Component {
     constructor(props) {
         super(props);
 // Had to hard-code `user_id` in order for this to work 
+        // `user_id: 5` is currently for New User
         this.state = {
             title: '',
             content: '',
-            user_id: 1,
+            user_id: 5,
             first_name: '',
             last_name: ''
         };
