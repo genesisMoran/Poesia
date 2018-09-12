@@ -8,6 +8,12 @@
 ## ERD
 ![poesia-erd](https://user-images.githubusercontent.com/39888042/45449606-9a553500-b6a3-11e8-9649-aac5a50e1af5.png)
 
+## Process
+
+## Technologies Used
+
+## Code Snippet
+
 ## Coming Soon!
 ### 10.01.2018
 #### Here is what's next for the Poesía app:
