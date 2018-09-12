@@ -1,9 +1,16 @@
 // The data is coming from `:3000`
 const BASE_URL = 'http://localhost:3000';
 
-// NEED TO INCLUDE USERS TO SOME CAPACITY
+// USER
+  export function fetchUsers() {
+    return fetch(`${BASE_URL}/users`)
+      .then(resp => resp.json())
+      .catch(err => {
+        throw Error(err);
+      });
+  }
 
-// AddPoem
+// AddPoem  
   // Create
   export function savePoem(poem) {
     const opts = {
@@ -30,35 +37,35 @@ export function fetchPoems() {
       throw Error(err);
     });
 }
-  // Read one poem
+  // Read one poem  *
 
-  
 // EditPoem
-  // Update
-export function updatePoem(poem) {
-  const opts = {
-    method: 'PUT',
-    body: JSON.stringify(poem), // might have to change to `{ data: poem }` but try and see 
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-  return fetch(`${BASE_URL}/poems/${poem.poem_id}`, opts) // not sure what to put inside `${poemId}`
-  .then(resp => {
-      return resp.json();
-  }).catch(error => {
-      throw Error(error);
-  });
-}
-  // Delete
+  // Update   *
+  export function updatePoem(poem) {
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify({ data: poem }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    return fetch(`${BASE_URL}/poems/${poem.id}`, opts) // HERE *
+    .then(resp => {
+        return resp.json();
+    }).catch(error => {
+        throw Error(error);
+    });
+  }
+
+  // Delete   *
 export function deletePoem(poem) {
   const opts = {
     method: 'DELETE',
-    body: JSON.stringify(poem),
+    body: JSON.stringify({ data: poem }),
     headers: {
       'Content-Type': 'application/json'
     }
   };
-  return fetch(`${BASE_URL}/poems/${poem.poem_id}`, opts)
+  return fetch(`${BASE_URL}/poems/${poem.id}`, opts)  // HERE *
   .then(resp => resp.json());
 }

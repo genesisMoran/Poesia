@@ -9,8 +9,8 @@ class AddPoem extends Component {
             title: '',
             content: '',
             user_id: 5,
-            first_name: '',
-            last_name: ''
+            first_name: '',     // Moving forward
+            last_name: ''       // Moving forward
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -37,11 +37,13 @@ class AddPoem extends Component {
                         name="title"
                         type="text"
                         value={this.state.title}
+                        placeholder="title"
                         onChange={this.handleChange} />
                     <input 
                         name="content"
                         type="text"
                         value={this.state.content}
+                        placeholder="content"
                         onChange={this.handleChange} />   
                     <input 
                         type="submit"

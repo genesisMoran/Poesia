@@ -8,9 +8,11 @@ import AddPoem from './components/AddPoem';
 import EditPoem from './components/EditPoem';
 import Header from './components/Header';
 import { 
+  fetchUsers,
   fetchPoems,
   savePoem,
-  updatePoem
+  updatePoem,
+  deletePoem
 } from './services/api';
 // Styling
 import './App.css';
@@ -22,25 +24,23 @@ class App extends Component {
     this.state = {
       currentView: '',
       selectedPoem: '',
-      poems: []
+      poems: [],
+      users: [],
     }
-    this.selectPoem = this.selectPoem.bind(this);   // Keep going
+    // this.selectPoem = this.selectPoem.bind(this);   
     this.createPoem = this.createPoem.bind(this);
     this.updatePoem = this.updatePoem.bind(this);
-    // this.deletePoem = this.deletePoem.bind(this);   // Need to add
+    this.handleEditPoem = this.handleEditPoem.bind(this);
+    // this.deletePoem = this.deletePoem.bind(this);   
   }
 
 componentDidMount() {
+  fetchUsers()
+  .then(data => this.setState({ users: data.users }));
+
   fetchPoems()
   .then(data => this.setState({ poems: data.poems }));
 }
-
-  selectPoem(poem) {
-    this.setState({
-      selectedPoem: poem,
-      currentView: 'Edit Poesía'
-    });
-  }
 
   createPoem(poem) {
     savePoem (poem)
@@ -57,9 +57,16 @@ componentDidMount() {
     .then(data => fetchPoems())
     .then(data => {
       this.setState({
-        currentView: 'Poesías',
+        currentView: '',
         poems: data.poems
       });
+    });
+  }
+
+  handleEditPoem(poem) {
+    this.setState({
+      selectedPoem: poem,
+      currentView: 'Edit Poesía'
     });
   }
   
@@ -71,18 +78,20 @@ componentDidMount() {
       case 'Poesías':
         return <ListPoems
           poems={poems}
-          selectedPoem={this.selectPoem}/>;
+          handleEditPoem={this.handleEditPoem} />;
           break;
       case 'Share Gems':
         return <AddPoem
           onSubmit={this.createPoem} />;
           break;
       case 'Edit Poesía':
-      const poem = poems.find(poem => poem.poem_id === selectedPoem.poem_id);
-        return <EditPoem
-        onSubmit={this.updatePoem}
-        onDelete={this.deletePoem} />;
+      // const poem = poems.find(poem => poem.poem_id === selectedPoem.poem_id);
+        return <EditPoem 
+        poem={selectedPoem}
+        onSubmit={this.updatePoem} />;
         break;
+        default:
+        return null;
     }
   }
 

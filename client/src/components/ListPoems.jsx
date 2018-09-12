@@ -9,7 +9,13 @@ function ListPoems(props) {
                         <div>{poem.title}</div>
                             {/* The following makes it possible for the poem content
                                 to be broken up into a new line where necessary */}
-                        <div>{poem.content.split("/").map((text, index) => (<p key={index}>{text}</p>))}</div>
+                        {poem.content.split("/").map((text, index) => (<p key={index}>{text}</p>))}
+                        <button
+                            onClick={(ev) => {
+                            ev.preventDefault();
+                            props.handleEditPoem(poem)}} >
+                            Edit Poem
+                        </button>
                     </main>
                 )
             })}
