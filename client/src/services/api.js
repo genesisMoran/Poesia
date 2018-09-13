@@ -37,7 +37,15 @@ export function fetchPoems() {
       throw Error(err);
     });
 }
-  // Read one poem  *
+  // Read one poem  
+export function fetchPoem(poem) {
+  return fetch(`${BASE_URL}/poems/${poem.id}`)
+    .then(resp => {
+        return resp.json();
+    }).catch(err => {
+        throw Error(err);
+    });
+}
 
 // EditPoem
   // Update   

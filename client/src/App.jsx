@@ -10,6 +10,7 @@ import Header from './components/Header';
 import { 
   fetchUsers,
   fetchPoems,
+  fetchPoem,  // Need to come back and work on this
   savePoem,
   updatePoem,
   deletePoem
@@ -25,7 +26,7 @@ class App extends Component {
       currentView: '',
       selectedPoem: '',
       poems: [],
-      users: [],
+      users: []
     }
     // this.selectPoem = this.selectPoem.bind(this);   
     this.createPoem = this.createPoem.bind(this);
@@ -83,12 +84,13 @@ componentDidMount() {
   
   determineWhichToRender() {
   const { currentView } = this.state;
-  const { poems, selectedPoem } = this.state;
+  const { users, poems, selectedPoem } = this.state;
 
     switch (currentView) {
       case 'Poesías':
         return <ListPoems
           poems={poems}
+          users={users}
           handleEditPoem={this.handleEditPoem}
           handleDeletePoem={this.handleDeletePoem} />;
           break;
