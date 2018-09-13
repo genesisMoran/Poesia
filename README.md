@@ -19,7 +19,6 @@
 ## Code Snippet
 
 ## Coming Soon!
-### 10.01.2018
 #### Here is what's next for the Poesía app:
 - NYC bookshop information available to the user:
 
