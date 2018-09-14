@@ -26,17 +26,17 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 ![4](https://user-images.githubusercontent.com/39888042/45548609-f5497200-b7f2-11e8-9517-9a1037f9eaec.png)
 
 ## See App Here
-Note: 
+http://polite-drain.surge.sh/
+#### Note: 
 - Click **Share Gems** to share your poetry.
 - Click **Poesías** to see a list of poems; once there you will have the ability to edit or delete an entry.
-- (Current issue: upon first entering the app and clicking **Poesías** the poems take a bit to load, do not fret they will show up and I'm working on it. Thanks.)
-- http://polite-drain.surge.sh/
+- (Current issue: upon first entering the app and clicking **Poesías** the poems take a bit to load, do not fret they will show up and I'm working on it. Thanks.
 
 ## Technologies Used
 The technologies used for this project include...
 ### A Postgresql database.
 ### Ruby on Rails in the back-end.
-Gemfiles such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
+Gemfiles such as `gem 'rack-cors'` which handles Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
 ### React.js in the front-end.
 *Dependencies:*
 - "bulma": "^0.7.1"
@@ -46,7 +46,7 @@ Gemfiles such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (C
 - "react-scripts": "1.1.5"
     
 ## Code Snippet
-**Back-end**, in my database seed file I have a `/` right before every new line of poetry which is handled in the **Front-end** via `.split()` function which makes it possible for the poem content to be broken up into a new line where necessary
+**Back-end**, in my database seed file I have a `/` right before every new line of poetry which is handled in the **Front-end** via a `.split()` function which makes it possible for the poem content to be broken up into a new line where indicated by the `/`.
 
 ![seeds](https://user-images.githubusercontent.com/39888042/45551451-034fc080-b7fc-11e8-8312-781947c26f03.png)
 ![listpoems](https://user-images.githubusercontent.com/39888042/45551447-00ed6680-b7fc-11e8-9fd1-8b1078c8126a.png)
