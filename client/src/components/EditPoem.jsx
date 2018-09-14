@@ -32,7 +32,7 @@ class EditPoem extends Component {
     }
 
     render() {
-        return(
+        return (
             <main>
                 <form onSubmit={this.handleSubmit} >
                 {/* GIF courtesy of GIPHY, Alastair Gray */}
