@@ -18,6 +18,8 @@
 
 ## Code Snippet
 
+## Screenshots
+
 ## Coming Soon!
 #### Here is what's next for the Poesía app:
 - NYC bookshop information available to the user:
