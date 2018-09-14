@@ -32,22 +32,25 @@ class AddPoem extends Component {
     render() {
         return (
             <main>
+                {/* GIF courtesy of GIPHY */}
+                <img alt="Rose" src="https://media.giphy.com/media/YGSpb7oIhENa/giphy.gif"></img>
                 <form onSubmit={this.handleSubmit}>
+                    <p>Title:</p>
                     <input
                         name="title"
                         type="text"
                         value={this.state.title}
-                        placeholder="title"
+                        placeholder="Título"
                         onChange={this.handleChange} />
-                    <input 
+                    <p>Content:</p>
+                    <textarea class="textarea" placeholder="La vida es Poesía..." rows="12"
                         name="content"
                         type="text"
                         value={this.state.content}
-                        placeholder="content"
                         onChange={this.handleChange} />   
-                    <input 
+                    <input class="button is-primary is-inverted"
                         type="submit"
-                        value="Add a poem" />
+                        value="Add A Poem" />
                 </form>
             </main>
         );

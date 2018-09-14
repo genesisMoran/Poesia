@@ -34,23 +34,25 @@ class EditPoem extends Component {
     render() {
         return(
             <main>
-                Test
                 <form onSubmit={this.handleSubmit} >
+                {/* GIF courtesy of GIPHY, Alastair Gray */}
+                <img alt="Movement" src="https://media.giphy.com/media/xTiTnHLbEuUDuBFiUw/giphy.gif"></img>
+                    <p>Title:</p>
                     <input
                         name="title"
                         type="text"
                         value={this.state.title}
-                        placeholder="title"
+                        placeholder="Título"
                         onChange={this.handleChange} />
-                    <input
+                    <p>Content:</p>
+                    <textarea class="textarea" placeholder="Struck by inspiration and need to edit your poem? Well, here you go!" rows="12"
                         name="content"
                         type="text"
                         value={this.state.content}
-                        placeholder="content"
                         onChange={this.handleChange} />
-                    <input
+                    <input class="button is-primary is-inverted"
                         type="submit"
-                        value="Edit" />
+                        value="Submit Your Changes!" />
                 </form>
             </main>
         );

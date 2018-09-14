@@ -10,7 +10,6 @@ import Header from './components/Header';
 import { 
   fetchUsers,
   fetchPoems,
-  fetchPoem,  // Need to come back and work on this
   savePoem,
   updatePoem,
   deletePoem
@@ -28,7 +27,7 @@ class App extends Component {
       poems: [],
       users: []
     }
-    // this.selectPoem = this.selectPoem.bind(this);   
+ 
     this.createPoem = this.createPoem.bind(this);
     this.updatePoem = this.updatePoem.bind(this);
     this.handleEditPoem = this.handleEditPoem.bind(this);
@@ -48,6 +47,7 @@ componentDidMount() {
     .then(data => fetchPoems())
     .then(data => {
       this.setState({
+        currentView: 'Poesías',
         poems: data.poems
       });
     });
@@ -99,12 +99,11 @@ componentDidMount() {
           onSubmit={this.createPoem} />;
           break;
       case 'Edit Poesía':
-      // const poem = poems.find(poem => poem.poem_id === selectedPoem.poem_id);
         return <EditPoem 
         poem={selectedPoem}
         onSubmit={this.updatePoem} />;
-        break;
-        default:
+          break;
+      default:
         return null;
     }
   }
@@ -116,15 +115,15 @@ componentDidMount() {
   render() {
     const links = [
       'Poesías',
-      'Share Gems',
-      'Edit Poesía'
+      'Share Gems'
     ];
 
     return(
       <div className="App">
         <Header
           onClick={this.handleLinkClick.bind(this)}
-          links={links} />
+          links={links} 
+          />
           {this.determineWhichToRender()}
       </div>
     )

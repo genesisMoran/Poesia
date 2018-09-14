@@ -1,7 +1,6 @@
 import React from 'react';
 
 function ListPoems(props) {
-    console.log(props)
     return(
         <main>
             {props.poems.map(poem => {
@@ -18,13 +17,14 @@ function ListPoems(props) {
                                 Author: <div>{user.first_name} {user.last_name}</div> 
                             </div> )}
                         })}</div>
-                        <button
+                        <button class="button is-primary is-inverted"
                             onClick={(ev) => {
                             ev.preventDefault();
                             props.handleEditPoem(poem)}} >
                             Edit Poem
                         </button>
-                        <button
+
+                        <button class="button is-primary is-inverted"
                             onClick={(ev) => {
                             ev.preventDefault();
                             props.handleDeletePoem(poem)}} >

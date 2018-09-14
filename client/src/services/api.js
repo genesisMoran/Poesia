@@ -1,4 +1,4 @@
-// The data is coming from `:3000`
+// The data is coming from:
 const BASE_URL = process.env.REACT_APP_API_URL
 
 // USER
@@ -35,15 +35,6 @@ export function fetchPoems() {
     .then(resp => resp.json())
     .catch(err => {
       throw Error(err);
-    });
-}
-  // Read one poem    * come back to this
-export function fetchPoem(poem) {
-  return fetch(`${BASE_URL}/poems/${poem.id}`)
-    .then(resp => {
-        return resp.json();
-    }).catch(err => {
-        throw Error(err);
     });
 }
 
