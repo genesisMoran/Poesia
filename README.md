@@ -12,6 +12,9 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 - As a user I want the ability to Update an entry
 - As a user I want the ability to Delete an entry
 
+## ERD
+![poesia-erd](https://user-images.githubusercontent.com/39888042/45449606-9a553500-b6a3-11e8-9649-aac5a50e1af5.png)
+
 ## Original Wireframe
 ![poesia-wireframe-1](https://user-images.githubusercontent.com/39888042/45041563-9fc4d680-b036-11e8-936e-a50266e22559.png)
 ![poesia-wireframe-2](https://user-images.githubusercontent.com/39888042/45042651-32ff0b80-b039-11e8-89d8-38e6dd849f5b.png)
@@ -22,8 +25,8 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 ![3](https://user-images.githubusercontent.com/39888042/45548604-ef539100-b7f2-11e8-8c29-e284f83fa176.png)
 ![4](https://user-images.githubusercontent.com/39888042/45548609-f5497200-b7f2-11e8-9517-9a1037f9eaec.png)
 
-## ERD
-![poesia-erd](https://user-images.githubusercontent.com/39888042/45449606-9a553500-b6a3-11e8-9649-aac5a50e1af5.png)
+## See App Here
+http://polite-drain.surge.sh/
 
 ## Technologies Used
 The technologies used for this project include...
@@ -39,12 +42,12 @@ Gemfiles such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (C
 - "react-scripts": "1.1.5".
     
 ## Code Snippet
-**Back-end**, in my database seed file I have a *`/`* right before every new line of poetry which is handled in the **Front-end** via `.split()` function which makes it possible for the poem content to be broken up into a new line where necessary
+**Back-end**, in my database seed file I have a `/` right before every new line of poetry which is handled in the **Front-end** via `.split()` function which makes it possible for the poem content to be broken up into a new line where necessary
 
 ![seeds](https://user-images.githubusercontent.com/39888042/45551451-034fc080-b7fc-11e8-8312-781947c26f03.png)
 ![listpoems](https://user-images.githubusercontent.com/39888042/45551447-00ed6680-b7fc-11e8-9fd1-8b1078c8126a.png)
 
-The code above also maps through the array of poems, displaying the `title` and `content`. It then maps through the array of users and matches the Poetry Entries with their correct Author with a simple `if` statement.
+The code above also maps through the array of poems, displaying the `title` and `content`. It then maps through the array of users and matches the poetry entries with their correct **Author** with a simple `if` statement.
 
 ## Coming Soon!
 #### Here is what's next for the Poesía app:
