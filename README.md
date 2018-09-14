@@ -27,8 +27,8 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 
 ## See App Here
 Note: 
-- Click **Poesías** to see a list of poems; once there you will have the ability to edit or delete an entry.
 - Click **Share Gems** to share your poetry.
+- Click **Poesías** to see a list of poems; once there you will have the ability to edit or delete an entry.
 - Current issue: upon first entering the app and clicking **Poesías** the poems take a bit to load, do not fret they will show up and I'm working on it. Thanks.
 http://polite-drain.surge.sh/
 
@@ -39,11 +39,11 @@ The technologies used for this project include...
 Gemfiles such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
 ### React.js in the front-end.
 *Dependencies:*
-- "bulma": "^0.7.1",
-- "eslint": "^5.5.0",
-- "react": "^16.4.2",
-- "react-dom": "^16.4.2",
-- "react-scripts": "1.1.5".
+- "bulma": "^0.7.1"
+- "eslint": "^5.5.0"
+- "react": "^16.4.2"
+- "react-dom": "^16.4.2"
+- "react-scripts": "1.1.5"
     
 ## Code Snippet
 **Back-end**, in my database seed file I have a `/` right before every new line of poetry which is handled in the **Front-end** via `.split()` function which makes it possible for the poem content to be broken up into a new line where necessary
