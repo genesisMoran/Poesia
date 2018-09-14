@@ -27,10 +27,10 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 
 ## Technologies Used
 The technologies used for this project include...
-#### A Postgresql database.
-#### Ruby on Rails in the back-end.
+### - A Postgresql database.
+### - Ruby on Rails in the back-end.
 - Gem files such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
-#### React.js in the front-end.
+### - React.js in the front-end.
 *Dependencies:*
 - "bulma": "^0.7.1",
 - "eslint": "^5.5.0",
@@ -61,6 +61,7 @@ The technologies used for this project include...
 - https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api 
 
 ## Special Thanks
-- Geoffrey Harnett 
-- Ufuoma Gometi
-- Mimi Klein
+*For their troubleshooting help*
+- Mimi Klein (WDI Lambda Project Squad Lead)
+- Geoffrey Harnett (WDI Lambda Classmate)
+- Ufuoma Gometi (WDI Grad)
