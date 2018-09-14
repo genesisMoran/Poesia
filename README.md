@@ -26,6 +26,10 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 ![4](https://user-images.githubusercontent.com/39888042/45548609-f5497200-b7f2-11e8-9517-9a1037f9eaec.png)
 
 ## See App Here
+Note: 
+- Click **Poesías** to see a list of poems; once there you will have the ability to edit or delete an entry.
+- Click **Share Gems** to share your poetry.
+- Current issue: upon first entering the app and clicking **Poesías** the poems take a bit to load, do not fret they will show up and I'm working on it. Thanks.
 http://polite-drain.surge.sh/
 
 ## Technologies Used
