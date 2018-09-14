@@ -14,9 +14,10 @@ import {
   updatePoem,
   deletePoem
 } from './services/api';
-// Styling
+// STYLING
 import './App.css';
-import 'bulma/css/bulma.css'
+  // Styling Reference: https://bulma.io/documentation/
+  import 'bulma/css/bulma.css'
 
 class App extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ componentDidMount() {
     .then(data => fetchPoems())
     .then(data => {
       this.setState({
-        currentView: 'Poesías',
+        currentView: 'Poesías   |',
         poems: data.poems
       });
     });
@@ -58,7 +59,7 @@ componentDidMount() {
     .then(data => fetchPoems())
     .then(data => {
       this.setState({
-        currentView: '',
+        currentView: 'Poesías   |',
         poems: data.poems
       });
     });
@@ -76,7 +77,7 @@ componentDidMount() {
     .then(data => fetchPoems())
     .then(data => {
       this.setState({
-        currentView: 'Poesías',
+        currentView: 'Poesías   |',
         poems: data.poems
       });
     });
@@ -87,14 +88,14 @@ componentDidMount() {
   const { users, poems, selectedPoem } = this.state;
 
     switch (currentView) {
-      case 'Poesías':
+      case 'Poesías   |':
         return <ListPoems
           poems={poems}
           users={users}
           handleEditPoem={this.handleEditPoem}
           handleDeletePoem={this.handleDeletePoem} />;
           break;
-      case 'Share Gems':
+      case '   |  Share Gems':
         return <AddPoem
           onSubmit={this.createPoem} />;
           break;
@@ -114,10 +115,9 @@ componentDidMount() {
 
   render() {
     const links = [
-      'Poesías',
-      'Share Gems'
+      'Poesías   |',
+      '   |  Share Gems'
     ];
-
     return(
       <div className="App">
         <Header

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header(props){
+function Header(props) {
     const { links } = props;
     return (
         <main>
@@ -16,11 +16,11 @@ function Header(props){
                 </div>
               </div>
             </section>
-            <div className="header">
+            <div>
                 {links.map(link => {
                     return <div
                             key={link}
-                            className="link"
+                            className="links"
                             onClick={() => props.onClick(link)}>
                             {link}
                             </div>

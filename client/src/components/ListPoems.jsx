@@ -6,11 +6,12 @@ function ListPoems(props) {
             {props.poems.map(poem => {
                 return (
                     <main key={poem.id}>
-                        <div>{poem.title}</div>
+                        <div className="Title">{poem.title}</div>
                             {/* The following makes it possible for the poem content
                                 to be broken up into a new line where necessary */}
                         <div>{poem.content.split("/").map((text, index) => (<p key={index}>{text}</p>))}</div>
-                        <div>{props.users.map(user => {
+                        <div className="Author">
+                        {props.users.map(user => {
                             if (poem.user_id === user.id) {
                             return (
                             <div key={user.id}>
