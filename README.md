@@ -27,10 +27,10 @@ Many say that poetry is dead, here's an app which aims to keep it alive - Poesí
 
 ## Technologies Used
 The technologies used for this project include...
-### - A Postgresql database.
-### - Ruby on Rails in the back-end.
-- Gem files such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
-### - React.js in the front-end.
+### A Postgresql database.
+### Ruby on Rails in the back-end.
+Gemfiles such as `gem 'rack-cors'` for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible.
+### React.js in the front-end.
 *Dependencies:*
 - "bulma": "^0.7.1",
 - "eslint": "^5.5.0",
@@ -39,8 +39,12 @@ The technologies used for this project include...
 - "react-scripts": "1.1.5".
     
 ## Code Snippet
-![listpoems](https://user-images.githubusercontent.com/39888042/45551447-00ed6680-b7fc-11e8-9fd1-8b1078c8126a.png)
+**Back-end**, in my database seed file I have a *`/`* right before every new line of poetry which is handled in the **Front-end** via `.split()` which makes it possible for the poem content to be broken up into a new line where necessary
+
 ![seeds](https://user-images.githubusercontent.com/39888042/45551451-034fc080-b7fc-11e8-8312-781947c26f03.png)
+![listpoems](https://user-images.githubusercontent.com/39888042/45551447-00ed6680-b7fc-11e8-9fd1-8b1078c8126a.png)
+
+The code above also maps through the array of poems, displaying the Title and Content. It then maps through the array of users and matches the Poetry Entries with their correct Author with a simple `if` statement.
 
 ## Coming Soon!
 #### Here is what's next for the Poesía app:
