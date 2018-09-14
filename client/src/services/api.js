@@ -1,5 +1,5 @@
 // The data is coming from `:3000`
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.REACT_APP_API_URL
 
 // USER
   export function fetchUsers() {
@@ -37,7 +37,7 @@ export function fetchPoems() {
       throw Error(err);
     });
 }
-  // Read one poem  
+  // Read one poem    * come back to this
 export function fetchPoem(poem) {
   return fetch(`${BASE_URL}/poems/${poem.id}`)
     .then(resp => {
